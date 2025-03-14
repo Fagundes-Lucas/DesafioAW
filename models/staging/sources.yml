@@ -1,0 +1,118 @@
+version: 2
+
+sources:
+  - name: erp_aw
+    description: "Adventure Works ERP - Raw data."
+    database: FEA24_11  
+    schema: RAW_ADVENTURE_WORKS
+    tables:
+      - name: product
+        description: "List of products with attributes and pricing."
+        columns:
+          - name: productid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: address
+        description: "Addresses for customers and businesses."
+        columns:
+          - name: addressid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: stateprovince
+        description: "States and provinces linked to addresses."
+        columns:
+          - name: stateprovinceid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: countryregion
+        description: "Countries and regions used in addresses and sales territories."
+        columns:
+          - name: countryregioncode
+            data_tests:
+              - unique
+              - not_null
+
+      - name: customer
+        description: "Customers associated with sales orders."
+        columns:
+          - name: customerid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: store
+        description: "Stores registered in the system."
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: person
+        description: "Individuals linked to customers or employees."
+        columns:
+          - name: businessentityid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: creditcard
+        description: "Credit card details for transactions."
+        columns:
+          - name: creditcardid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: salesorderheadersalesreason
+        description: "Mapping between sales orders and sales reasons."
+        columns:
+          - name: salesorderid
+            data_tests:
+              - not_null
+
+      - name: salesreason
+        description: "Reasons for sales transactions, such as promotions."
+        columns:
+          - name: salesreasonid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: salesorderdetail
+        description: "Line items for each sales order, including products and quantities."
+        columns:
+          - name: salesorderdetailid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: salesorderheader
+        description: "Sales order headers with customer and total value information."
+        columns:
+          - name: salesorderid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: productsubcategory
+        description: "Subcategories of products."
+        columns:
+          - name: productsubcategoryid
+            data_tests:
+              - unique
+              - not_null
+
+      - name: productcategory
+        description: "Categories that group products into broader groups."
+        columns:
+          - name: productcategoryid
+            data_tests:
+              - unique
+              - not_null
