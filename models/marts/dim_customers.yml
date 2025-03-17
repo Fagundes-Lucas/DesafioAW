@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: >
+      This table contains customer details, including personal and geographic information.
+
+    columns:
+      - name: PK_CUSTOMER
+        description: "Primary key identifying each customer."
+        tests:
+          - unique
+          - not_null
+
+      - name: CUSTOMER_NAME
+        description: "Full name of the customer."
+
+      - name: FK_STORE
+        description: "Foreign key linking the customer to the store they are associated with."
+
+      - name: FK_TERRITORY
+        description: "Foreign key linking to the sales territory of the customer."
+
+      - name: CITY
+        description: "City where the customer is located."
+
+      - name: STATE
+        description: "State where the customer is located."
+
+      - name: COUNTRY
+        description: "Country where the customer is located."

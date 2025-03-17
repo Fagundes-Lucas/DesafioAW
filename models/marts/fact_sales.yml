@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: >
+      This fact table consolidates sales transactions, combining order details and order headers.
+      It contains key information for analyzing sales performance, revenue, and discounts.
+
+    columns:
+      - name: PK_ORDERDETAIL
+        description: "Unique identifier for each sales order line item."
+        tests:
+          - unique
+          - not_null
+
+      - name: FK_ORDER
+        description: "Foreign key linking to the sales order."
+
+      - name: FK_PRODUCT
+        description: "Foreign key linking to the product purchased in the order."
+
+      - name: FK_CUSTOMER
+        description: "Foreign key linking to the customer who made the purchase."
+
+      - name: FK_CREDITCARD
+        description: "Foreign key linking to the credit card used for the payment."
+
+      - name: FK_TERRITORY
+        description: "Foreign key linking to the territory where the sale occurred."
+
+      - name: FK_ADDRESS
+        description: "Foreign key linking to the billing or shipping address of the order."
+
+      - name: ORDER_DATE
+        description: "The date when the order was placed."
+
+      - name: ORDER_DUE_DATE
+        description: "The expected due date for fulfilling the order."
+
+      - name: ORDER_SHIP_DATE
+        description: "The date the order was shipped to the customer."
+
+      - name: ORDER_STATUS
+        description: "Numeric representation of the order status."
+
+      - name: STATUS_DESCRIPTION
+        description: "Text description of the order status."
+
+      - name: QUANTITY
+        description: "Total quantity of items in the order."
+
+      - name: UNIT_PRICE
+        description: "Price per unit for the purchased product."
+
+      - name: DISCOUNT
+        description: "Discount applied to the product in the order."
+
+      - name: GROSS_VALUE
+        description: "Total gross sales value before applying any discounts."
+
+      - name: NET_VALUE
+        description: "Total net sales value after discounts."
+
+      - name: PRORATED_FREIGHT
+        description: "Freight cost distributed across the order items."
+
+      - name: PRORATED_TAX_AMOUNT
+        description: "Tax amount distributed across the order items."
+
+      - name: IS_ONLINEORDER
+        description: "Indicates whether the order was placed online (TRUE/FALSE)."

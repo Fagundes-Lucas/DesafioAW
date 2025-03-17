@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_creditcards
+    description: >
+      Stores credit card details used in sales transactions.
+
+    columns:
+      - name: PK_CREDITCARD
+        description: "Primary key identifying a unique credit card."
+        tests:
+          - unique
+          - not_null
+
+      - name: CARD_TYPE
+        description: "Type of the credit card (e.g., Visa, Mastercard, Amex)."
+
+      - name: STATUS_CARD
+        description: "Indicates if the card is active or expired."
