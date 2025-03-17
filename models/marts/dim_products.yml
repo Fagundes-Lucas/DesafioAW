@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: >
+      This table stores product-related details, including categories and subcategories.
+      It helps in analyzing product sales and performance.
+
+    columns:
+      - name: PK_PRODUCT
+        description: "Primary key identifying each product."
+        tests:
+          - unique
+          - not_null
+
+      - name: FK_PRODUCT_CATEGORY
+        description: "Foreign key linking the product to its category."
+
+      - name: FK_PRODUCT_SUBCATEGORY
+        description: "Foreign key linking the product to its subcategory."
+
+      - name: PRODUCT_NAME
+        description: "Name of the product."
+
+      - name: PRODUCT_CATEGORY
+        description: "Category classification of the product."
+
+      - name: PRODUCT_SUBCATEGORY
+        description: "Subcategory classification of the product."

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_locations
+    description: >
+      This table provides geographic details, including city, state, and country.
+      It helps in location-based sales analysis.
+
+    columns:
+      - name: PK_ADDRESS
+        description: "Primary key identifying each unique address."
+        tests:
+          - unique
+          - not_null
+
+      - name: FK_TERRITORY
+        description: "Foreign key linking to the sales territory."
+
+      - name: FK_STATE_PROVINCE
+        description: "Foreign key linking to the state or province."
+
+      - name: FK_COUNTRY
+        description: "Foreign key linking to the country."
+
+      - name: ADDRESS_CITY
+        description: "City where the address is located."
+
+      - name: STATEPROVINCE_NAME
+        description: "State or province name."
+
+      - name: COUNTRY_NAME
+        description: "Country name."

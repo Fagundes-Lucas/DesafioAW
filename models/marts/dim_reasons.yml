@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_reasons
+    description: >
+      Dimension containing sales reasons, used to understand the factors influencing customer purchases.
+
+    columns:
+      - name: PK_ORDER
+        description: "Unique identifier for each sales order."
+        tests:
+          - unique
+          - not_null
+
+      - name: REASON_NAME
+        description: "Description of the reason associated with a sale."
+
+      - name: REASON_TYPE
+        description: "Category grouping similar sales reasons."

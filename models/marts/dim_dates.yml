@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: >
+      The date dimension table provides time-based attributes for sales analysis.
+
+    columns:
+      - name: PK_DATE
+        description: "Primary key representing a unique date."
+        tests:
+          - unique
+          - not_null
+
+      - name: DAY_OF_WEEK
+        description: "Numeric value representing the day of the week (1 = Sunday, 7 = Saturday)."
+
+      - name: MONTH_OF_YEAR
+        description: "Numeric value representing the month (1 = January, 12 = December)."
+
+      - name: YEAR_NUMBER
+        description: "Year associated with the date."
